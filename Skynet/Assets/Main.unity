@@ -956,8 +956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec61e51aa69d3c468d073455cdd871a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tube: {fileID: 1690652899}
+  TubeGO: {fileID: 1690652899}
   TargetXPosition: 17
+  Speed: 50
 --- !u!4 &1330306778
 Transform:
   m_ObjectHideFlags: 0
@@ -1570,7 +1571,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1939725561}
   - component: {fileID: 1939725560}
-  - component: {fileID: 1939725559}
   - component: {fileID: 1939725558}
   - component: {fileID: 1939725557}
   m_Layer: 0
@@ -1588,13 +1588,6 @@ AudioListener:
   m_GameObject: {fileID: 1939725556}
   m_Enabled: 1
 --- !u!124 &1939725558
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1939725556}
-  m_Enabled: 1
---- !u!92 &1939725559
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

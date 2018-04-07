@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public GameObject Tube;
+    public GameObject TubeGO;
+    public float TargetXPosition;
+    public float Speed;
 
+    Transform Tube;
     bool requestLeft;
     bool requestRight;
 
-    public float TargetXPosition;
-
     // Use this for initialization
     void Start () {
-		
-	}
+        Tube = TubeGO.transform;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -31,19 +32,38 @@ public class Player : MonoBehaviour {
             return;
 
         if (requestLeft)
-            StartCoroutine(GoLeft());
+            StartGoLeft();
 
         if (requestRight)
-            StartCoroutine(GoRight());
+            StartGoRight();
+
+        requestLeft = false;
+        requestRight = false;
     }
 
-    IEnumerator GoLeft()
+    void StartGoLeft()
     {
-        yield return null;
+        StopAllCoroutines();
+        Vector3 target = new Vector3(-TargetXPosition, Tube.position.y, Tube.position.z);
+        StartCoroutine(GoToTarget(target));
     }
 
-    IEnumerator GoRight()
+    void StartGoRight()
     {
-        yield return null;
+        StopAllCoroutines();
+        Vector3 target = new Vector3(TargetXPosition, Tube.position.y, Tube.position.z);
+        StartCoroutine(GoToTarget(target));
+    }
+
+    IEnumerator GoToTarget(Vector3 target)
+    { 
+        while (true)
+        {
+            Tube.position = Vector3.MoveTowards(Tube.position, target, Speed * Time.smoothDeltaTime);
+            if (Tube.position == target)
+                yield return null;
+
+            yield return new WaitForSeconds(0.01f);
+        }
     }
 }
