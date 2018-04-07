@@ -291,7 +291,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 4.97, z: 2.97}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &176365640
 MeshFilter:
@@ -896,7 +896,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   v: {fileID: 1922772385}
   HeadsWaitingGO: {fileID: 2058055250}
-  Speed: 10
+  Speed: 20
+  Tube: {fileID: 1690652899}
+  movingHead: 0
 --- !u!1 &928288600 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100004, guid: 7b66d066d1f236b4889bd980fbc5cae6, type: 3}
@@ -1967,7 +1969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1794868689
 Transform:
   m_ObjectHideFlags: 0
