@@ -790,6 +790,7 @@ MonoBehaviour:
   headTemplates: {fileID: 318694290}
   Heads: {fileID: 646557716}
   maxWaitTime: 5
+  maxForce: 1000
 --- !u!1 &1216827258
 GameObject:
   m_ObjectHideFlags: 0

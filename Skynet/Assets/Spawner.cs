@@ -10,6 +10,8 @@ public class Spawner : MonoBehaviour {
     float minWaitTime = 1.0f;
     public float maxWaitTime;
 
+    public float maxForce;
+
     // Use this for initialization
     void Start () {
         StartCoroutine(SpawnHead());     
@@ -27,6 +29,8 @@ public class Spawner : MonoBehaviour {
 
             newHead.name = headTemplate.name;
             newHead.transform.parent = Heads.transform;
+
+            newHead.GetComponent<Rigidbody>().AddForce(0, -Random.Range(0, maxForce), 0, ForceMode.Impulse);
 
             yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
         }
