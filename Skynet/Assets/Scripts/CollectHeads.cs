@@ -5,16 +5,7 @@ using UnityEngine;
 public class CollectHeads : MonoBehaviour {
 
     public FakeHeadMovement fhm;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Health health;
 
     void OnTriggerEnter(Collider other)
     {
@@ -25,11 +16,11 @@ public class CollectHeads : MonoBehaviour {
 
             if(o.name == gameObject.name)
             {
-                print("hura");
+                health.Heal();
             }
             else
             {
-                print("spatny typ smrti, smula");
+                health.TakeDmg();
             }
 
             o.GetComponent<RemoveMe>().DisableAndRemove();
