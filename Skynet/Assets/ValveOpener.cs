@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class ValveOpener : MonoBehaviour
 {
-
-    public Valve Valve;
-
     // Use this for initialization
     void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
     {
 
     }
