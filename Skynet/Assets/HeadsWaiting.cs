@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class HeadsWaiting : MonoBehaviour {
 
-    List<GameObject> heads;
+    public GameObject HeadsWaitingGO;
 
     // Use this for initialization
     void Start()
     {
-        heads = new List<GameObject>();
+
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Head")
         {
-            heads.Add(other.gameObject);
+            other.gameObject.transform.parent = HeadsWaitingGO.transform;
         }
     }
 }
