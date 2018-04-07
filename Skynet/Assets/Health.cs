@@ -8,6 +8,11 @@ public class Health : MonoBehaviour {
     public int currentHP;
     public Text hpText;
 
+    public void Start()
+    {
+        printHealth();
+    }
+
     public void TakeDmg()
     {
         currentHP -= 15;
@@ -36,6 +41,6 @@ public class Health : MonoBehaviour {
 
     void GameOver()
     {
-        hpText.text = "f#@!";
+        //TODO play sound
     }
 }
