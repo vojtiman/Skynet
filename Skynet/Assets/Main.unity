@@ -795,6 +795,7 @@ GameObject:
   - component: {fileID: 653772928}
   - component: {fileID: 653772927}
   - component: {fileID: 653772926}
+  - component: {fileID: 653772931}
   m_Layer: 0
   m_Name: Head (poisoned)
   m_TagString: Head
@@ -883,6 +884,17 @@ Transform:
   m_Father: {fileID: 318694291}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653772931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653772925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f41ed50687b8c7449a8a2c9573256d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &662722501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,6 +1707,7 @@ GameObject:
   - component: {fileID: 1765606327}
   - component: {fileID: 1765606326}
   - component: {fileID: 1765606325}
+  - component: {fileID: 1765606330}
   m_Layer: 0
   m_Name: Head (shot)
   m_TagString: Head
@@ -1783,6 +1796,17 @@ Transform:
   m_Father: {fileID: 318694291}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765606330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1765606324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f41ed50687b8c7449a8a2c9573256d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765961757
 GameObject:
   m_ObjectHideFlags: 0

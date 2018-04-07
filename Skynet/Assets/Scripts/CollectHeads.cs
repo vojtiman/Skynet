@@ -18,11 +18,12 @@ public class CollectHeads : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Head")
+        GameObject o = other.gameObject;
+        if (o.tag == "Head")
         {
             fhm.HeadCollected();
 
-            if(other.name == gameObject.name)
+            if(o.name == gameObject.name)
             {
                 print("hura");
             }
@@ -31,7 +32,7 @@ public class CollectHeads : MonoBehaviour {
                 print("spatny typ smrti, smula");
             }
 
-            other.gameObject.GetComponent<RemoveMe>().DisableAndRemove();
+            o.GetComponent<RemoveMe>().DisableAndRemove();
         }
     }
 }

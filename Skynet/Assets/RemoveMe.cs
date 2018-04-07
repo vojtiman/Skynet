@@ -10,7 +10,7 @@ public class RemoveMe : MonoBehaviour {
         GetComponent<Collider>().enabled = false;
         GetComponent<Rigidbody>().detectCollisions = false;
 
-        Invoke("DestroyMe", 5.0f);
+        //Invoke("DestroyMe", 5.0f);
     }
 
     void DestoryMe()
