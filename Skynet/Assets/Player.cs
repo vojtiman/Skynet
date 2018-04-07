@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     public GameObject TubeGO;
     public float TargetXPosition;
     public float Speed;
+    public Valve Valve;
 
     Transform Tube;
     bool requestLeft;
@@ -25,19 +26,35 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         if (sideReached && !returning)
+        {
             StartGoMiddle();
+            return;
+        }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (returning)
+            return;
+
+        //Tube is in the middle
+       //Valve.Open();
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !returning)
         {
             requestLeft = true;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !returning)
         {
             requestRight = true;
         }
 
         if (requestLeft == requestRight)
+        {
+            requestLeft = false;
+            requestRight = false;
             return;
+        }
+
+        //Request to move to side
+        //Valve.Close();
 
         if (requestLeft)
             StartGoLeft();
@@ -51,6 +68,7 @@ public class Player : MonoBehaviour {
 
     void StartGoLeft()
     {
+        print("LEFT");
         StopAllCoroutines();
         Vector3 target = new Vector3(-TargetXPosition, Tube.position.y, Tube.position.z);
         StartCoroutine(GoToTarget(target));
@@ -58,6 +76,7 @@ public class Player : MonoBehaviour {
 
     void StartGoRight()
     {
+        print("Right");
         StopAllCoroutines();
         Vector3 target = new Vector3(TargetXPosition, Tube.position.y, Tube.position.z);
         StartCoroutine(GoToTarget(target));
@@ -65,6 +84,7 @@ public class Player : MonoBehaviour {
 
     void StartGoMiddle()
     {
+        print("mid");
         returning = true;
         StopAllCoroutines();
         Vector3 mid = new Vector3(0, Tube.position.y, Tube.position.z);
