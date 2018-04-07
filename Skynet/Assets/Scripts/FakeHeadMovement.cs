@@ -19,7 +19,7 @@ public class FakeHeadMovement : MonoBehaviour {
 
     public void HeadCollected()
     {
-        print("head collected");
+        //print("head collected");
         movingHead = false;
     }
 	
@@ -30,7 +30,7 @@ public class FakeHeadMovement : MonoBehaviour {
             movingHead = true;
             GameObject head = HeadsWaitingGO.transform.GetChild(0).gameObject;
             head.transform.SetParent(Tube.transform);
-            print("moving" + head.name);
+            //print("moving" + head.name);
             StartMoveHead(head);
         }
 	}

@@ -21,7 +21,17 @@ public class CollectHeads : MonoBehaviour {
         if (other.tag == "Head")
         {
             fhm.HeadCollected();
-            Destroy(other.gameObject);
+
+            if(other.name == gameObject.name)
+            {
+                print("hura");
+            }
+            else
+            {
+                print("spatny typ smrti, smula");
+            }
+
+            other.gameObject.GetComponent<RemoveMe>().DisableAndRemove();
         }
     }
 }
