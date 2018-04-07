@@ -8,18 +8,23 @@ public class FakeHeadMovement : MonoBehaviour {
     public GameObject HeadsWaitingGO;
     public float Speed;
 
-    bool moving;
+    bool movingHead;
 
     // Use this for initialization
     void Start () {
 		
 	}
+
+    public void HeadCollected()
+    {
+        movingHead = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (!moving && v.IsOpen && HeadsWaitingGO.transform.childCount > 0)
+        if (!movingHead && v.IsOpen && HeadsWaitingGO.transform.childCount > 0)
         {
-            moving = true;
+            movingHead = true;
             GameObject head = HeadsWaitingGO.transform.GetChild(0).gameObject;
             StartMoveHead(head);
         }
@@ -49,7 +54,6 @@ public class FakeHeadMovement : MonoBehaviour {
                 if (head.transform.position == target)
                 {
                     break;
-                    //yield return null;
                 }
 
                 yield return new WaitForSeconds(0.01f);
